@@ -39,16 +39,30 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let index2 = str.index(str.startIndex, offsetBy: indexPath.row) //will call succ 2 times
-        let lastChar: Character = str[index2]
+//        let index2 = str.index(str.startIndex, offsetBy: indexPath.row) //will call succ 2 times
+//        let lastChar: Character = str[index2]
+//
+//        let lastStr = String(lastChar)
+//        let capStr = lastStr.uppercased()
+//        let char = Character(capStr)
+//
+//        let chageStr = self.replace(myString: str, indexPath.row, char)
+//        self.nameLbl.text = chageStr
+//
+        var newStr = String()
         
-        let lastStr = String(lastChar)
-        let capStr = lastStr.uppercased()
-        let char = Character(capStr)
-        
-        print("selected char : \(lastChar)")
-        let chageStr = self.replace(myString: str, indexPath.row, char)
-        self.nameLbl.text = chageStr
+        for (key,value) in str.enumerated(){
+            if key == indexPath.row {
+                let char = String(value)
+                newStr += char.uppercased()
+                
+            }else{
+                newStr += String(value)
+            }
+            
+        }
+        self.nameLbl.text = newStr
+        print("new string : \(newStr)")
     }
     
     func replace(myString: String, _ index: Int, _ newChar: Character) -> String {
