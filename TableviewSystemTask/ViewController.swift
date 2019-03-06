@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        nameArray = ["GitHub","SourceTree","Bitbucket","VersionControl","Xcode","IOS","Android"]
+        nameArray = ["github","sourcetree","Bitbucket","versioncontrol","xcode","ios","android"]
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nameArray.count
